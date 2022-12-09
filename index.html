@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love calculator</title>
+  </head>
+
+  <body>
+    <div class="im">
+      <div id="main">
+        <div id="calc">
+          <div id="lc">
+            <p>LOVE calculator</p>
+          </div>
+          <br />
+          <div class="inpu1">
+            <input type="text" placeholder="Your Name" id="name" /><span
+              id="plus">+</span
+            >
+            <input type="text" placeholder="Love Name" id="lname" />
+          </div>
+          <br />
+          <button id="btn" onclick="loveper()">Show Your Love Result</button>
+        </div>
+        <br />
+        <div class="inpu">
+          <input type="text" placeholder="Love percentage" id="lovevalue" />
+        </div>
+        <br />
+        <div id="GB">
+          <p>God Bless Your Relationship</p>
+        </div>
+      </div>
+    </div>
+    <style>
+      .im {
+        position: relative;
+        background: url("./teddy.jpg") center center/cover no-repeat;
+        background-attachment: fixed;
+        height: 100vh;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: aquamarine;
+        position: relative;
+        height: 100vh;
+      }
+      #main {
+        position: absolute;
+        border: 2px solid red;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #lc {
+        background-color: red;
+        height: 40px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #GB {
+        background-color: grey;
+        height: 40px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .inpu {
+        text-align: center;
+      }
+      .inpu1 {
+        text-align: center;
+        align-content: center;
+      }
+      button {
+        cursor: pointer;
+        text-align: center;
+        margin-left: 40%;
+        background-color: green;
+        width: 190px;
+        height: 40px;
+        padding: 5px;
+        font-size: 15px;
+        color: white;
+        border-radius: 50px;
+      }
+      /* @media(min-width:0px) and  (max-width: 320px){
+
+  }
+  #lc{
+    text-align: center;
+  }
+  #name{
+    width: 140px;
+  }
+  #lname{
+    width: 140px;
+  }
+  #lovevalue{
+    width: 140px;
+  }
+  #plus{
+    display: block;
+  }
+  #btn{
+    margin-left: 2%;
+    width: auto;
+  }
+  #GB{
+    display: inline-block;
+    text-align: center;
+  } */
+      
+
+      @media(min-width:321px) and  (max-width: 500px){
+        #lc{
+    text-align: center;
+  }
+  #name{
+    width: 240px;
+  }
+  #lname{
+    width: 240px;
+  }
+  #lovevalue{
+    width: 240px;
+  }
+  #plus{
+    display: block;
+  }
+  #btn{
+    margin-left: 15%;
+    width: auto;
+  }
+  #GB{
+    display: inline-block;
+    text-align: center;
+  }
+      }
+
+      @media(min-width:501px) and  (max-width: 725px){
+        #lc{
+    text-align: center;
+  }
+  #name{
+    width: 340px;
+  }
+  #lname{
+    width: 340px;
+  }
+  #lovevalue{
+    width: 340px;
+  }
+  #plus{
+    display: block;
+  }
+  #btn{
+    margin-left: 25%;
+    width: auto;
+  }
+  #GB{
+display: flex;
+justify-content: center;
+      }}
+    </style>
+    <script>
+
+      function loveper() {
+
+        let name = document.getElementById("name").value;
+        let lname = document.getElementById("lname").value;
+        if(name == ""){
+            alert('please enter your name');
+        }else if(name.length <=2){
+            alert('min length is 3');
+        }else if(!isNaN(name)){
+            alert('only character are allowed');
+        }
+         if(lname == ""){
+            alert('please enter your love name');
+        }else if(lname.length <=2){
+            alert('min length is 3 character');
+        }else if(!isNaN(lname)){
+            alert('only character are alloweds');
+        }else{
+            let lovedata = Math.random() * 100;
+        let res = Math.floor(lovedata);
+        document.getElementById("lovevalue").value = res + "%";
+        }
+      }
+    </script>
+  </body>
+</html>
